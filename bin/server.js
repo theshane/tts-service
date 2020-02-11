@@ -24,6 +24,8 @@ app.use(
   })
 );
 
+// Routes run throuh seperate handlers
+// this will allow us to unit test them a little easier
 app.get("/true-to-size/:ticker/ratings", (req, res) =>
   ttsGetRatings(req, res, sequelize, DataTypes)
 );
