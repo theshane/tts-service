@@ -4,9 +4,17 @@
 Stores and uses crowdsourced sizing data to determine a TrueToSizeCalculation which is the average of sizing data per shoe
 
 ## Architecture
-2 Containers
+### Containers
 Postgresql container
 tts-web container runs the app
+
+### App
+express
+Sequelize orm
+
+### Databases
+Dev - Postgresql
+Test - sqlite3
 
 ## Assumptions
 I assumed that we had some sort of item database that we could hook into.
@@ -17,12 +25,9 @@ I have api testing in place. I did set it up to be able to unit test each handle
 
 ## How to run
 You will need docker compose
-run `docker-compose up` from the app directory
+run `docker-compose up -d` from the app directory
 You can use the included Postman collection to test
 
 ### How to run automated testing
 `docker exec -it tts-web "/bin/bash"`
 Inside the docker run `npm test`
-
-
-
