@@ -7,13 +7,18 @@ const {
   ttsGetTTsValue
 } = require("../lib/tts/handlers/TTSHandler.js");
 
+const PORTS = {
+    development: 3000,
+    test: 4000,
+}
+
 //Create db connection once and send it to the handler
 const sequelize = new Sequelize(dbConfig[process.env.NODE_ENV]);
 
 const bodyParser = require("body-parser");
 
 const app = express();
-const port = 3000;
+const port = PORTS[process.env.NODE_ENV];
 
 app.use(bodyParser.json()); // to support JSON-encoded bodies
 

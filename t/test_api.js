@@ -16,7 +16,7 @@ describe("API Testing", () => {
   describe("GET /true-to-size/:ticker/ratings", () => {
     it("should contain default rating for 350V2-LM", done => {
       axios
-        .get("http://localhost:3000/true-to-size/350V2-LM/ratings")
+        .get("http://localhost:4000/true-to-size/350V2-LM/ratings")
         .then(function(response) {
           // handle success
           expect(response.data[0].rating).equal(3);
@@ -32,7 +32,7 @@ describe("API Testing", () => {
   describe("GET /true-to-size/:ticker/tts-value", () => {
     it("should contain TrueToSizeCalculation for 350V2-LM", done => {
       axios
-        .get("http://localhost:3000/true-to-size/350V2-LM/tts-value")
+        .get("http://localhost:4000/true-to-size/350V2-LM/tts-value")
         .then(function(response) {
           // handle success
           expect(response.data.TrueToSizeCalculation).equal(3);
@@ -48,7 +48,7 @@ describe("API Testing", () => {
   describe("POST /true-to-size/:ticker/tts-value", () => {
     it("should take new rating and display new TrueToSizeCalculation for 350V2-LM", done => {
       axios
-        .post("http://localhost:3000/true-to-size/350V2-LM/rating", {rating: 4})
+        .post("http://localhost:4000/true-to-size/350V2-LM/rating", {rating: 4})
         .then(function(response) {
           // handle success
           expect(response.data.TrueToSizeCalculation).equal(3.5);
