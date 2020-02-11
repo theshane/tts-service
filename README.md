@@ -31,3 +31,8 @@ You can use the included Postman collection to test
 ### How to run automated testing
 `docker exec -it tts-web "/bin/bash"`
 Inside the docker run `npm test`
+
+### Other Notes
+1. I wanted to build unit tests for my handlers but I could not get the sequelize mocks to work in the time I had to work on this so I moved on.
+2. The db config file is in GIT - This is a bad thing but again, it is in the interest of time
+3. Thank you for taking the time too look at my code. I had fun writing it.
