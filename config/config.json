@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "true_to_size_dev",
+    "host": "db_dev",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "true_to_size_test",
+    "host": "db_test",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "true_to_size",
+    "host": "db_prod",
+    "dialect": "postgres"
+  }
+}
