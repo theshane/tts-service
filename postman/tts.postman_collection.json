@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "358a96eb-c5c4-41dd-9410-25dc72d341dd",
+		"name": "tts",
+		"description": "Used for excercising the TTS service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/true-to-size/350V2-LM/tts-value",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/true-to-size/350V2-LM/tts-value?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"true-to-size",
+						"350V2-LM",
+						"tts-value"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "timestep(auto)",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/true-to-size/350V2-LM/ratings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/true-to-size/350V2-LM/ratings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"true-to-size",
+						"350V2-LM",
+						"ratings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/true-to-size/350V2-LM/ratings",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"rating\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/true-to-size/350V2-LM/rating",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"true-to-size",
+						"350V2-LM",
+						"rating"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

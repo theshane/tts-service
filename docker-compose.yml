@@ -6,13 +6,13 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
       POSTGRES_DB: true_to_size_dev
-    volumes:
-      - ./pgdata:/var/lib/postgresql/data
     ports:
       - "5432:5432"
   web:
     build: .
     container_name: tts-web
+    volumes:
+      - .:/usr/src/app
     depends_on:
       - db_dev
     ports:

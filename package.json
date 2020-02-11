@@ -4,18 +4,26 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./bin/server.js"
+    "test": "export NODE_ENV=test; rm -f /var/tmp/test_db.db; npm run initdb; npm run seeddb; mocha t/",
+    "initdb": "npx sequelize-cli db:migrate --migrations-path lib/tts/migrations/ --models-path lib/tts/models/",
+    "seeddb": "npx sequelize-cli db:seed:all --seeders-path lib/tts/seeders/ --models-path lib/tts/models/",
+    "start": "export NODE_ENV=development; npm run initdb; npm run seeddb; node ./bin/server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "pg": "^7.18.1",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^5.21.4"
+    "sequelize": "^5.21.4",
+    "sqlite3": "^4.1.1"
   },
   "devDependencies": {
-    "sequelize-cli": "^5.5.1"
+    "axios": "^0.19.2",
+    "chai": "^4.2.0",
+    "mocha": "^7.0.1",
+    "sequelize-cli": "^5.5.1",
+    "sinon": "^8.1.1"
   }
 }
